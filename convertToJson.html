@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   </head>
+
+<body>
+    <div id="myData"></div>
+	<script>
+    fetch("./jsondata.json")
+    .then(response => response.json())
+    .then(json => console.log(json));
+  </script>
+    <script>
+        fetch("./jsondata.json")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            var mainContainer = document.getElementById("myData");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = 'Timestamp'+ data[i].Timestamp 
+				'What are some precautions that you take when you leave your house? (Check all that apply)'  
+				
+                mainContainer.appendChild(div);
+            }
+        }
+    </script>
+</body>
+ ðÄ#|Š>ð
